@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Banking</title>
+<style>
+body { font-family: Arial; background: #e8f5e9; padding: 20px; text-align: center; }
+input, button { width: 200px; margin: 5px; padding: 8px; }
+</style>
+</head>
+<body>
+
+<h2>Bank Balance: $<span id="balance">1000</span></h2>
+<input type="number" id="amount" placeholder="Enter Amount">
+<br>
+<button onclick="deposit()">Deposit</button>
+<button onclick="withdraw()">Withdraw</button>
+
+<script>
+let balance = 1000;
+function deposit() {
+  const amt = +document.getElementById('amount').value;
+  if (amt > 0) { balance += amt; update(); }
+}
+function withdraw() {
+  const amt = +document.getElementById('amount').value;
+  if (amt > 0 && amt <= balance) { balance -= amt; update(); }
+}
+function update() {
+  document.getElementById('balance').textContent = balance;
+  document.getElementById('amount').value = '';
+}
+</script>
+
+</body>
+</html>
