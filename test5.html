@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+  <style>
+    body { font-family: Arial, background: #f0f8ff; padding: 20px; }
+    h1 { text-align: center; }
+    form, table { margin: 20px auto; width: 300px; }
+    input, button { width: 100%; padding: 8px; margin-top: 5px; }
+    table, th, td { border: 1px solid #333; border-collapse: collapse; text-align: center; }
+    th, td { padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Student Management</h1>
+
+<form id="studentForm">
+  <input type="text" id="name" placeholder="Enter Name" required>
+  <input type="number" id="age" placeholder="Enter Age" required>
+  <button type="submit">Add Student</button>
+</form>
+
+<table id="studentTable">
+  <tr><th>Name</th><th>Age</th></tr>
+</table>
+
+<script>
+  const form = document.getElementById('studentForm');
+  const table = document.getElementById('studentTable');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const age = document.getElementById('age').value.trim();
+    if (name && age) {
+      const row = table.insertRow();
+      row.insertCell(0).textContent = name;
+      row.insertCell(1).textContent = age;
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>
