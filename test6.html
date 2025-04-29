@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <title>Online Banking</title>
 <style>
-body { font-family: Arial; background: #e8f5e9; padding: 20px; text-align: center; }
-input, button { width: 200px; margin: 5px; padding: 8px; }
+body { font-family: Arial; background: #e8f5e9; padding: 20px; text-align: center; background: lightblue; color: black; }
+body { background: white; padding: 20px; border-radius: 10px; max-width: 300px; margin: 50px auto ; box-shadow: 0 0 10px grey; }
+
+input, button { width: 200px; margin: 5px; padding: 8px; background: blueviolet; color: #e8f5e9; }
 </style>
 </head>
 <body>
 
 <h2>Bank Balance: $<span id="balance">1000</span></h2>
-<input type="number" id="amount" placeholder="Enter Amount">
+<input style="background: violet; color: #e8f5e9;" type="number" id="amount" placeholder="Enter Amount">
 <br>
 <button onclick="deposit()">Deposit</button>
 <button onclick="withdraw()">Withdraw</button>
@@ -34,3 +36,4 @@ function update() {
 
 </body>
 </html>
+
