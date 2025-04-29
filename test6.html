@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>Online Banking</title>
 <style>
-body { font-family: Arial; background: #e8f5e9; padding: 20px; text-align: center; background: lightblue; color: black; }
-body { background: white; padding: 20px; border-radius: 10px; max-width: 300px; margin: 50px auto ; box-shadow: 0 0 10px grey; }
 
-input, button { width: 200px; margin: 5px; padding: 8px; background: blueviolet; color: #e8f5e9; }
+body { text-align:center;background:  white; padding: 20px; border-radius: 10px; max-width: 300px; margin: 50px auto ; box-shadow: 0 0 10px grey; }
+
+input, button { width: 200px; margin: 10px; padding: 10px; background: solid wheat; color: black; }
 </style>
 </head>
 <body>
@@ -27,6 +27,7 @@ function deposit() {
 function withdraw() {
   const amt = +document.getElementById('amount').value;
   if (amt > 0 && amt <= balance) { balance -= amt; update(); }
+  else { alert('Insufficient balance or invalid amount'); }
 }
 function update() {
   document.getElementById('balance').textContent = balance;
@@ -36,4 +37,3 @@ function update() {
 
 </body>
 </html>
-
