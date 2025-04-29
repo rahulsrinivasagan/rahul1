@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <title>Loan EMI Calculator</title>
 <style>
-body { font-family: Arial; background: #ede7f6; padding: 20px; text-align: center; }
-input, button { width: 200px; padding: 8px; margin: 5px; }
+body { text-align:center;font-size: 18px;background:   white; padding: 20px; border-radius: 10px; max-width: 300px; margin: 50px auto ; box-shadow: 0 0 10px grey; }
+
+input, button { width: 200px; margin: 10px; padding: 10px; background: solid wheat; color: black; }
+
 </style>
 </head>
 <body>
@@ -25,6 +27,9 @@ function calculate() {
   if (p && r && n) {
     const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     document.getElementById('result').textContent = `EMI: ₹${emi.toFixed(2)}`;
+  }
+  else {
+    document.getElementById('result').textContent = 'Please fill all fields!';
   }
 }
 </script>
