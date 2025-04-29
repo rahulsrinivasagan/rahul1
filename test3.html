@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Online Assessment</title>
+  <style>
+    body { font-family: Arial; margin: 60px; }
+    .question { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: 10px; box-shadow: 0 0 10px blue; }
+    .question p { font-size: 18px; }
+    button { margin-top: 10px; padding: 8px 15px; }
+    #result { font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h2><center>Simple Online Assessment</center></h2>
+
+  <center>
+  <div class="question">
+    <p>1. What is the capital of France?</p>
+    <input type="radio" name="q1" value="correct"> Paris<br>
+    <input type="radio" name="q1" value="wrong"> Rome<br>
+    <input type="radio" name="q1" value="wrong"> Madrid
+  </div>
+  </center>
+
+  <center>
+  <div class="question">
+    <p>2. 2 + 2 equals?</p>
+    <input type="radio" name="q2" value="wrong"> 3<br>
+    <input type="radio" name="q2" value="correct"> 4<br>
+    <input type="radio" name="q2" value="wrong"> 5
+  </div>
+  </center>
+
+  <center><button onclick="submitQuiz()">Submit</button></center>
+
+  <div id="result"></div>
+
+  <script>
+    function submitQuiz() {
+      let score = 0;
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+      document.getElementById('result').textContent = 
+        You scored ${score} out of 2;
+    }
+  </script>
+
+</body>
+</html>
