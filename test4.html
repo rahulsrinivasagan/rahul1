@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket Reservation</title>
+  <style>
+    body { font-family: Arial, background: #f0f2f5; text-align: center; padding: 50px; }
+    .container { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 0 10px gray; }
+    input, select, button { margin: 10px 0; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #4CAF50; color: white; font-weight: bold; cursor: pointer; }
+    #output { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Ticket Reservation</h2>
+  <input type="text" id="name" placeholder="Enter your name" required>
+  <select id="destination">
+    <option value="">Select Destination</option>
+    <option value="New York">New York</option>
+    <option value="Paris">Paris</option>
+    <option value="Tokyo">Tokyo</option>
+  </select>
+  <input type="number" id="tickets" placeholder="Number of Tickets" min="1" required>
+  <button onclick="reserve()">Reserve Ticket</button>
+  <div id="output"></div>
+</div>
+
+<script>
+function reserve() {
+  const name = document.getElementById('name').value;
+  const dest = document.getElementById('destination').value;
+  const tickets = document.getElementById('tickets').value;
+
+  if (name && dest && tickets > 0) {
+    document.getElementById('output').innerHTML = 
+      `<h3>Reservation Confirmed!</h3>
+       <p>Name: ${name}</p>
+       <p>Destination: ${dest}</p>
+       <p>Tickets: ${tickets}</p>`;
+  } else {
+    alert('Please fill all fields correctly!');
+  }
+}
+</script>
+
+</body>
+</html>
